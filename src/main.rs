@@ -4,7 +4,6 @@ extern crate rand;
 
 fn main() {
     use glium::{glutin, Surface};
-    use rand::Rng;
 
     let mut events_loop = glutin::EventsLoop::new();
     let window = glutin::WindowBuilder::new()
@@ -38,12 +37,9 @@ fn main() {
         },
     );
 
-    let mut rng = rand::thread_rng();
     for i in 0..100 {
-        // let x: f32 = rng.gen();
         let x = (i % 3) as f32;
         let x = 2.0 * x - 1.0;
-        // let y: f32 = rng.gen();
         let y = (i / 3) as f32;
         let y = 2.0 * y - 1.0;
         world
