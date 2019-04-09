@@ -7,6 +7,18 @@ pub enum E {
     Rectangle(rectangle::Rectangle),
 }
 
+impl From<circle::Circle> for E {
+    fn from(c: circle::Circle) -> E {
+        E::Circle(c)
+    }
+}
+
+impl From<rectangle::Rectangle> for E {
+    fn from(r: rectangle::Rectangle) -> E {
+        E::Rectangle(r)
+    }
+}
+
 pub struct GlobalUniform {
     pub dt: f32,
     pub gravity: [f32; 2],

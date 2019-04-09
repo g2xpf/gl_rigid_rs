@@ -27,6 +27,13 @@ impl<'a> World<'a> {
         }
     }
 
+    pub fn push<T>(&mut self, body: T)
+    where
+        E: From<T>,
+    {
+        self.bodies.push(E::from(body));
+    }
+
     pub fn brand<T>(&self, target: &mut T)
     where
         T: glium::Surface,

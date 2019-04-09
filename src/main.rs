@@ -42,39 +42,31 @@ fn main() {
         let x = 2.0 * x - 1.0;
         let y = (i / 3) as f32;
         let y = 2.0 * y - 1.0;
-        world
-            .bodies
-            .push(gl_rigid_rs::E::Circle(gl_rigid_rs::Circle::new(
-                0.6,
-                [x, y + 10.0],
-                [0.0, 0.0],
-                false,
-            )));
+        world.push(gl_rigid_rs::Circle::new(
+            0.6,
+            [x, y + 10.0],
+            [0.0, 0.0],
+            false,
+        ));
     }
-    world
-        .bodies
-        .push(gl_rigid_rs::E::Circle(gl_rigid_rs::Circle::new(
-            6.0,
-            [10.0, -9.0],
-            [0.0, 0.0],
-            true,
-        )));
-    world
-        .bodies
-        .push(gl_rigid_rs::E::Circle(gl_rigid_rs::Circle::new(
-            6.0,
-            [-10.0, -9.0],
-            [0.0, 0.0],
-            true,
-        )));
-    world
-        .bodies
-        .push(gl_rigid_rs::E::Circle(gl_rigid_rs::Circle::new(
-            10.0,
-            [0.0, -20.0],
-            [0.0, 0.0],
-            true,
-        )));
+    world.push(gl_rigid_rs::Circle::new(
+        6.0,
+        [10.0, -9.0],
+        [0.0, 0.0],
+        true,
+    ));
+    world.push(gl_rigid_rs::Circle::new(
+        6.0,
+        [-10.0, -9.0],
+        [0.0, 0.0],
+        true,
+    ));
+    world.push(gl_rigid_rs::Circle::new(
+        10.0,
+        [0.0, -20.0],
+        [0.0, 0.0],
+        true,
+    ));
 
     let mut window_should_closed = false;
     while !window_should_closed {
